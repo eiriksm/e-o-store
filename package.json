@@ -1,0 +1,23 @@
+{
+  "name": "e-o-store",
+  "version": "1.0.0",
+  "description": "e-o-store =========",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eiriksm/e-o-store.git"
+  },
+  "author": "Eirik S. Morland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eiriksm/e-o-store/issues"
+  },
+  "homepage": "https://github.com/eiriksm/e-o-store",
+  "dependencies": {
+    "hiredis": "^0.3.0",
+    "redis": "^0.12.1"
+  }
+}
