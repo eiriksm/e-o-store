@@ -1,85 +1,24 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "e-o-store@github:eiriksm/e-o-store",
-        "scope": null,
-        "escapedName": "e-o-store",
-        "name": "e-o-store",
-        "rawSpec": "github:eiriksm/e-o-store",
-        "spec": "github:eiriksm/e-o-store",
-        "type": "hosted",
-        "hosted": {
-          "type": "github",
-          "ssh": "git@github.com:eiriksm/e-o-store.git",
-          "sshUrl": "git+ssh://git@github.com/eiriksm/e-o-store.git",
-          "httpsUrl": "git+https://github.com/eiriksm/e-o-store.git",
-          "gitUrl": "git://github.com/eiriksm/e-o-store.git",
-          "shortcut": "github:eiriksm/e-o-store",
-          "directUrl": "https://raw.githubusercontent.com/eiriksm/e-o-store/master/package.json"
-        }
-      },
-      "/Users/eirikmorland/github/e-o-cron"
-    ]
-  ],
-  "_from": "eiriksm/e-o-store",
-  "_id": "e-o-store@1.0.0",
-  "_inCache": true,
-  "_location": "/e-o-store",
-  "_phantomChildren": {},
-  "_requested": {
-    "raw": "e-o-store@github:eiriksm/e-o-store",
-    "scope": null,
-    "escapedName": "e-o-store",
-    "name": "e-o-store",
-    "rawSpec": "github:eiriksm/e-o-store",
-    "spec": "github:eiriksm/e-o-store",
-    "type": "hosted",
-    "hosted": {
-      "type": "github",
-      "ssh": "git@github.com:eiriksm/e-o-store.git",
-      "sshUrl": "git+ssh://git@github.com/eiriksm/e-o-store.git",
-      "httpsUrl": "git+https://github.com/eiriksm/e-o-store.git",
-      "gitUrl": "git://github.com/eiriksm/e-o-store.git",
-      "shortcut": "github:eiriksm/e-o-store",
-      "directUrl": "https://raw.githubusercontent.com/eiriksm/e-o-store/master/package.json"
-    }
+  "name": "e-o-store",
+  "version": "1.0.0",
+  "description": "e-o-store =========",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
   },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "git://github.com/eiriksm/e-o-store.git#37634e0b4dd3f3cf0a4de0e4aa3d4ad47eabae5d",
-  "_shasum": "6d21c389f41735144849bfd6c7e4ab37a21980e5",
-  "_shrinkwrap": null,
-  "_spec": "e-o-store@github:eiriksm/e-o-store",
-  "_where": "/Users/eirikmorland/github/e-o-cron",
-  "author": {
-    "name": "Eirik S. Morland"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eiriksm/e-o-store.git"
   },
+  "author": "Eirik S. Morland",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/eiriksm/e-o-store/issues"
   },
+  "homepage": "https://github.com/eiriksm/e-o-store",
   "dependencies": {
     "async": "^2.5.0",
     "hiredis": "^0.5.0",
     "redis": "^2.8.0"
-  },
-  "description": "e-o-store =========",
-  "devDependencies": {},
-  "gitHead": "37634e0b4dd3f3cf0a4de0e4aa3d4ad47eabae5d",
-  "homepage": "https://github.com/eiriksm/e-o-store",
-  "license": "MIT",
-  "main": "index.js",
-  "name": "e-o-store",
-  "optionalDependencies": {},
-  "readme": "e-o-store\n=========\n",
-  "readmeFilename": "README.md",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eiriksm/e-o-store.git"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "version": "1.0.0"
+  }
 }
