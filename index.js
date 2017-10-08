@@ -1,5 +1,6 @@
-var redis = require('redis');
-var client = redis.createClient();
+const redis = require('redis');
+const asyncParallel = require('async/parallel');
+let client = redis.createClient();
 
 client.on('error', function(e) {
   // Make sure we are bailing out and not giving out false data.
@@ -31,8 +32,14 @@ module.exports = {
   listen: (callback) => {
     callbacks.push(callback);
   },
-  append: (value) => {
-    client.rpush('eostorequeue', value);
-    client.publish('eo.appended', value);
+  append: (value, callback) => {
+    asyncParallel([
+      client.rpush.bind(null, 'eostorequeue', value),
+      client.publish.bind(null, 'eo.appended', value)
+    ], (err, res) => {
+      if (callback) {
+        callback(err, res)
+      }
+    })
   }
 }
