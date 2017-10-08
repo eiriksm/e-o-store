@@ -25,6 +25,7 @@ module.exports = {
   },
   shutdown: function() {
     client.quit();
+    subscriber.quit();
   },
   del: function(key, callback) {
     client.del(key, callback);
@@ -33,10 +34,7 @@ module.exports = {
     callbacks.push(callback);
   },
   append: (value, callback) => {
-    asyncParallel([
-      client.rpush.bind(null, 'eostorequeue', value),
-      client.publish.bind(null, 'eo.appended', value)
-    ], (err, res) => {
+    client.publish('eo.appended', value, (err, res) => {
       if (callback) {
         callback(err, res)
       }
