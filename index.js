@@ -4,6 +4,9 @@ function start(config) {
 }
 
 module.exports = {
+  all: function() {
+    return data
+  },
   start: start,
   get: function(key, callback) {
     callback(null, data[key])
