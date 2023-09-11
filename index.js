@@ -1,43 +1,29 @@
-const redis = require('redis');
-const asyncParallel = require('async/parallel');
-let client = redis.createClient();
-
-client.on('error', function(e) {
-  // Make sure we are bailing out and not giving out false data.
-  throw e;
-});
-
-let subscriber = redis.createClient();
 let callbacks = [];
-subscriber.psubscribe('eo.*');
-subscriber.on('pmessage', (pattern, channel, message) => {
-  callbacks.forEach((cb) => {
-    cb(channel, message);
-  })
-})
+var data = {}
+function start(config) {
+}
 
 module.exports = {
+  start: start,
   get: function(key, callback) {
-    client.get(key, callback);
+    callback(null, data[key])
   },
   set: function(key, value, callback) {
-    client.set(key, value, callback);
+    data[key] = value;
+    callback(null)
   },
   shutdown: function() {
-    client.quit();
-    subscriber.quit();
+
   },
   del: function(key, callback) {
-    client.del(key, callback);
+    delete data[key]
   },
   listen: (callback) => {
     callbacks.push(callback);
   },
   append: (value, callback) => {
-    client.publish('eo.appended', value, (err, res) => {
-      if (callback) {
-        callback(err, res)
-      }
+    callbacks.forEach((cb) => {
+      cb('whocares', value);
     })
   }
 }

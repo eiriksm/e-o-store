@@ -17,8 +17,5 @@
   },
   "homepage": "https://github.com/eiriksm/e-o-store",
   "dependencies": {
-    "async": "^2.5.0",
-    "hiredis": "^0.5.0",
-    "redis": "^2.8.0"
   }
 }
