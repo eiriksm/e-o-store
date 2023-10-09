@@ -20,6 +20,7 @@ module.exports = {
   },
   del: function(key, callback) {
     delete data[key]
+    callback(null)
   },
   listen: (callback) => {
     callbacks.push(callback);
